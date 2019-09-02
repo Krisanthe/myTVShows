@@ -30,7 +30,10 @@ class ExoPlayerModule(val context: VideoActivity) {
     }
 
     @Provides
-    fun provideExoPlayer(rendererFactory: DefaultRenderersFactory, trackSelectorFactory: AdaptiveTrackSelection.Factory): SimpleExoPlayer {
+    fun provideExoPlayer(
+        rendererFactory: DefaultRenderersFactory,
+        trackSelectorFactory: AdaptiveTrackSelection.Factory
+    ): SimpleExoPlayer {
         return ExoPlayerFactory.newSimpleInstance(
             rendererFactory,
             DefaultTrackSelector(trackSelectorFactory),

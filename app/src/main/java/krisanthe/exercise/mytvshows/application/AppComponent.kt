@@ -4,7 +4,6 @@ import dagger.Component
 import krisanthe.exercise.mytvshows.api.ShowApi
 import krisanthe.exercise.mytvshows.utils.AppSchedulers
 
-
 @AppScope
 @Component(modules = [AppContextModule::class, ApiServiceModule::class, ConnectionModule::class])
 interface AppComponent {

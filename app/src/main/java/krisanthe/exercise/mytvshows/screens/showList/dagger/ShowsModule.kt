@@ -15,25 +15,25 @@ class ShowsModule(val context: ShowsFragment) {
 
     @ShowsScope
     @Provides
-    fun provideContext() : ShowsFragment {
+    fun provideContext(): ShowsFragment {
         return context
     }
 
     @ShowsScope
     @Provides
-    fun provideView(context: ShowsFragment) : ShowView {
+    fun provideView(context: ShowsFragment): ShowView {
         return ShowView(context)
     }
 
     @ShowsScope
     @Provides
-    fun provideModel(api: ShowApi) : ShowModel {
+    fun provideModel(api: ShowApi): ShowModel {
         return ShowModel(context, api)
     }
 
     @ShowsScope
     @Provides
-    fun providePresenter(schedulers: AppSchedulers, model: ShowModel, view: ShowView) : ShowPresenter {
+    fun providePresenter(schedulers: AppSchedulers, model: ShowModel, view: ShowView): ShowPresenter {
         val subscriptions = CompositeDisposable()
         return ShowPresenter(schedulers, model, view, subscriptions)
     }

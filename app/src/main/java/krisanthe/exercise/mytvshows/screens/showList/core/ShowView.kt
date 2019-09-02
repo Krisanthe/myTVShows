@@ -19,8 +19,6 @@ import krisanthe.exercise.mytvshows.R
 import krisanthe.exercise.mytvshows.model.ShowDetails
 import krisanthe.exercise.mytvshows.screens.showList.ShowsFragment
 import krisanthe.exercise.mytvshows.screens.showList.adapter.ShowsAdapter
-import java.util.*
-
 
 class ShowView(val context: ShowsFragment) {
 
@@ -67,7 +65,6 @@ class ShowView(val context: ShowsFragment) {
         return view
     }
 
-
     private fun setupSearchViewListener() {
         search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(searchValue: String): Boolean {
@@ -94,7 +91,7 @@ class ShowView(val context: ShowsFragment) {
         AlertDialog.Builder(context.activity)
             .setTitle("Error")
             .setMessage("No internet connection")
-            .setPositiveButton("Ok") { d, _ -> d.dismiss()}
+            .setPositiveButton("Ok") { d, _ -> d.dismiss() }
             .create()
             .show()
     }

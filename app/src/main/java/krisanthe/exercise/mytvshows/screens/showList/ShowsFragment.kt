@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import krisanthe.exercise.mytvshows.application.AppController
 import krisanthe.exercise.mytvshows.screens.showList.core.ShowPresenter
@@ -35,14 +34,12 @@ class ShowsFragment : Fragment() {
         presenter.onCreate()
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
         presenter.onDestroy()
     }
 
-    override fun onCreateView(
-        @NonNull inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return view.view()
     }
 
@@ -50,5 +47,4 @@ class ShowsFragment : Fragment() {
         val i = Intent(activity, VideoActivity::class.java)
         startActivity(i)
     }
-
 }

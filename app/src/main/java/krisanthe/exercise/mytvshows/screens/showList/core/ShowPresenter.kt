@@ -6,7 +6,6 @@ import krisanthe.exercise.mytvshows.model.ShowDetails
 import krisanthe.exercise.mytvshows.utils.AppSchedulers
 import timber.log.Timber
 
-
 class ShowPresenter(
     private val schedulers: AppSchedulers,
     private val model: ShowModel,

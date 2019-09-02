@@ -14,7 +14,6 @@ import krisanthe.exercise.mytvshows.screens.video.dagger.DaggerVideoComponent
 import krisanthe.exercise.mytvshows.screens.video.dagger.ExoPlayerModule
 import javax.inject.Inject
 
-
 class VideoActivity : AppCompatActivity() {
 
     @Inject
@@ -23,11 +22,9 @@ class VideoActivity : AppCompatActivity() {
     @Inject
     lateinit var bandwidthMeter: DefaultBandwidthMeter
 
-
     private val BASE_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
     private val BASE_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:40.0) Gecko/20100101 Firefox/40.0"
     private var playbackPosition = 0L
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +49,6 @@ class VideoActivity : AppCompatActivity() {
         super.onStop()
     }
 
-
     private fun initializeExoplayer() {
         prepareExoplayer()
         ep_video_view.player = simpleExoplayer
@@ -67,7 +63,7 @@ class VideoActivity : AppCompatActivity() {
 
     private fun buildMediaSource(uri: Uri): MediaSource {
         val dataSourceFactory = DefaultHttpDataSourceFactory(BASE_AGENT, bandwidthMeter)
-        return  ExtractorMediaSource.Factory(dataSourceFactory)
+        return ExtractorMediaSource.Factory(dataSourceFactory)
             .createMediaSource(uri, null, null)
     }
 

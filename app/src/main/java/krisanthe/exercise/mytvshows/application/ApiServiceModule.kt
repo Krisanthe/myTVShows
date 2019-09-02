@@ -1,12 +1,12 @@
 package krisanthe.exercise.mytvshows.application
 
-import retrofit2.Retrofit
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module
-import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.OkHttpClient
 import dagger.Provides
 import krisanthe.exercise.mytvshows.api.ShowApi
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 class ApiServiceModule {
@@ -15,7 +15,11 @@ class ApiServiceModule {
 
     @AppScope
     @Provides
-    fun provideNumberApi(client: OkHttpClient, gson: GsonConverterFactory, adapterFactory: RxJava2CallAdapterFactory): ShowApi {
+    fun provideNumberApi(
+        client: OkHttpClient,
+        gson: GsonConverterFactory,
+        adapterFactory: RxJava2CallAdapterFactory
+    ): ShowApi {
         val retrofit = Retrofit.Builder()
             .client(client)
             .baseUrl(BASE_URL)

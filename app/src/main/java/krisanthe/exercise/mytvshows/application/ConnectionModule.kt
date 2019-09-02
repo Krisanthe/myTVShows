@@ -52,5 +52,4 @@ class ConnectionModule {
     fun provideAdapterFactory(scheduler: AppSchedulers): RxJava2CallAdapterFactory {
         return RxJava2CallAdapterFactory.createWithScheduler(scheduler.internetScheduler())
     }
-
 }

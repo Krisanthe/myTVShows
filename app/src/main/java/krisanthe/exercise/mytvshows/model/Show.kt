@@ -3,7 +3,6 @@ package krisanthe.exercise.mytvshows.model
 import com.google.gson.annotations.Expose
 import java.io.Serializable
 
-
 class Show : Serializable {
 
     @Expose
@@ -14,7 +13,6 @@ class Show : Serializable {
 
     @Expose
     var genres = mutableListOf<String>()
-
 
     @Expose
     var image: Image? = null
